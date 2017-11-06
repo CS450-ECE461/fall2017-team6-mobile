@@ -11,6 +11,7 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ds-improved-ajax': true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -21,6 +22,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    gatekeeper: {
+      baseUrl: 'http://localhost:4200/',
+      startRoute: 'http://localhost:4200/dashboard',
+      signInRoute: 'http://localhost:4200/login',
+
+      tokenOptions: {
+        client_id: 'Test',
+        client_secret: '1234'
+      }
     }
   };
 
